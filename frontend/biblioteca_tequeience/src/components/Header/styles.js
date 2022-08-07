@@ -7,6 +7,7 @@ export const Container = styled.div`
   background: white;
   border: 2px solid #000;
  justify-content: center;
+ flex-direction:row;
 
 `;
 export const i_left = styled.div`
@@ -18,8 +19,13 @@ export const i_left = styled.div`
 
 `;
 export const i_right = styled.div`
+  display: flex;
   flex: 1;
   position: relative;
+  border: 2px solid #000;
+ gap: 1rem;
+ text-align: right;
+ 
 `;
 export const Header = styled.h1`
   border: 2px solid #000;

@@ -2,8 +2,9 @@ import styled from "styled-components";
 
 export const container = styled.div`
   border: 1px solid;
-  width:99%;
-  text-align:right;
+  width:2rem;
+  position: relative;
+  left:33rem ;
 
   input{
   visibility: hidden;
@@ -12,7 +13,7 @@ export const container = styled.div`
 #cart{
   cursor: pointer;
   transform:scale(1.5);
-  width:40px;
+  width:20px;
 }
 #cart:hover{
   transition: ease-in-out 1s;
