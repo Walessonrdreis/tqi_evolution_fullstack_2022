@@ -4,7 +4,7 @@ export const container = styled.div`
   border: 1px solid;
   width:2rem;
   position: relative;
-  left:33rem ;
+  left:30rem ;
 
   input{
   visibility: hidden;

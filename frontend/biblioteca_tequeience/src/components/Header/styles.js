@@ -22,13 +22,13 @@ export const i_right = styled.div`
   display: flex;
   flex: 1;
   position: relative;
-  border: 2px solid #000;
  gap: 1rem;
  text-align: right;
+ border: 2px solid #000;
  
 `;
 export const Header = styled.h1`
-  border: 2px solid #000;
+
   width:100%;
   text-align:right;
   `;

@@ -17,11 +17,13 @@ const darkMode = theme.state.darkMode;
   
   return(
     <C.container>
+    <Link to="#">
     <Cart id="cart"/>
     <input for="cart" type="checkbox"/>
     <div
       className="t-button"
       style={darkMode ? {left: "2px "}: {right: "2px"}}></div>
+    </Link>
     </C.container>
   )
 }

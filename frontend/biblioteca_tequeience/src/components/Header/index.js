@@ -3,6 +3,7 @@ import {themeContext} from "../../Context"
 import Cart from "../Cart/Cart"
 import * as C from "./styles";
 import Bookmark from "../Bookmarks/Bookmarks"
+import User from "../User/User"; 
 
 const Header = ()=>{
   const theme = useContext(themeContext);
@@ -18,6 +19,7 @@ const Header = ()=>{
         </C.Header>
       </C.i_left>
       <C.i_right>
+      <User />
       <Bookmark />
       <Cart />
       </C.i_right>
