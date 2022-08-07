@@ -34,10 +34,56 @@
   margin-right: 4rem;
 }
 
-.n-list > ul :hover {
+.n-list ul li:hover ul.sub-list-services,
+.n-list ul li:hover ul.sub-list-category  {
+  visibility: visible;
+  transition: ease-out 1s;
+  
+} 
+.n-list ul li ul:hover li {
+
+color: white;
+background: var(--black);
+visibility: initial;
+
+}
+.n-list ul li ul.sub-list-services,
+.n-list ul li ul.sub-list-category {
+     visibility: hidden;     
+  position: absolute;
+  display: flex;
+  gap: 0.3rem;
+  flex-direction: column;
+  width: auto;
+  height: auto;
+  padding: 10px 0px 10px 0px;
+  border: 2px solid var(--orange);
+  background: var(--black);
+}
+.n-list > ul li ul.sub-list-services li,
+.n-list > ul li ul.sub-list-category li{
+
+  border-bottom: 2px  solid ;
+  border-top: 2px  solid ;
+  cursor: pointer;
+  padding: 0 9px;
+  width: 11rem;
+ }
+
+
+.n-list > ul li ul li:hover {
   color: var(--orange);
   cursor: pointer;
+  background: rgb(0,0,0);
 }
+
+/* .n-list  ul:hover:nth-child(2) li {
+visibility: visible;
+
+  
+
+} */
+
 
 .n-button{
   flex: 2;

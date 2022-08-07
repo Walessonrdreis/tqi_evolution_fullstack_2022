@@ -24,15 +24,25 @@ const Navbar = () =>{
             <Link to="services" spy={true} smooth={true}>
               Serviços
             </Link>
-                  <ul style={{ listStyleType: "none" }}>
+                  <ul style={{ listStyleType: "none" }} className="sub-list-services">
                       <li>
                          <Link to="works" spy={true} smooth={true}>
-                           Compra
+                           Criar Conta
+                          </Link>
+                      </li>
+                      <li>
+                         <Link to="works" spy={true} smooth={true}>
+                           Cadastrar livros
+                          </Link>
+                      </li>
+                      <li>
+                         <Link to="works" spy={true} smooth={true}>
+                           Comprar Livros
                           </Link>
                       </li>
                       <li>
                         <Link to="portfolio" spy={true} smooth={true}>
-                          venda
+                          Vender Livros
                         </Link>
                       </li>
                   </ul>
@@ -41,7 +51,7 @@ const Navbar = () =>{
             <Link to="works" spy={true} smooth={true}>
               Categorias
             </Link>
-                <ul style={{ listStyleType: "none" }}>
+                <ul style={{ listStyleType: "none" }} className="sub-list-category">
                     <li>
                       <Link to="portfolio" spy={true} smooth={true}>
                       item1

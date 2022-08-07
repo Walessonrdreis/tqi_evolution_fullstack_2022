@@ -21,3 +21,8 @@
   font-weight: normal;
   font-size: 20px;
 }
+
+ul >:hover{
+  color: var(--orange);
+  cursor: pointer;
+}
