@@ -19,11 +19,9 @@ const darkMode = theme.state.darkMode;
     <C.container>
     <Link>
     <input for="user" type="checkbox"/>
-    <div
-      className="t-button"
-      style={darkMode ? {left: "2px "}: {right: "2px"}}></div>
+    <Users className="users"/>
+
     </Link>
-    <Users id="user"/>
     </C.container>
   )
 }

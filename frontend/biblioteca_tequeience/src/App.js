@@ -19,7 +19,7 @@ function App() {
       color: darkMode ? "white" : "",
     }}
     >
-   <Header />
+    <Header />
     <Navbar />
     </div>
   );

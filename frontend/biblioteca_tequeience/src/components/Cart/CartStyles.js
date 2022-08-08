@@ -1,10 +1,11 @@
 import styled from "styled-components";
 
 export const container = styled.div`
-  border: 1px solid;
+  /* border: 1px solid; */
   width:2rem;
+  height: 1.5rem;
   position: relative;
-  left:30rem ;
+ 
 
   input{
   visibility: hidden;
@@ -19,5 +20,6 @@ export const container = styled.div`
   transition: ease-in-out 1s;
   width:20px;
 }
+
   
-`
+`;
