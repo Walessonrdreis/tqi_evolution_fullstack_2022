@@ -3,6 +3,9 @@ import {
   useNavigate,
   Link,
 } from "react-router-dom";
+import Header from "../../components/Header";
+import Navbar from "../../components/Navbar/Navbar";
+
 
 
 
@@ -17,7 +20,8 @@ const Home = () => {
   }
   return (
       <>
-  
+        <Header />
+        <Navbar />
         <button onClick={logout}>Logout</button>
       </>
      
