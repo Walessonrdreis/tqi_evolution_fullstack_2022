@@ -21,7 +21,7 @@ public class LivrariaController {
 
   @PostMapping("/cadastrar")
   public ResponseEntity<?> cadastrar(@RequestBody LivrariaModel lm){
-      return ls.cadastrar(lm);
+      return ls.cadastrarAlterar(lm, "cadastrar");
   }
 
   @GetMapping("/listar")

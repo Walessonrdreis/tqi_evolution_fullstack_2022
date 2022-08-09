@@ -27,8 +27,8 @@ public class LivrariaService {
     
   }
   
-  //Metodo para cadastrar livros
-  public ResponseEntity<?> cadastrar(LivrariaModel lm){
+  //Metodo para cadastrar ou alterar livros
+  public ResponseEntity<?> cadastrarAlterar(LivrariaModel lm, String acao){
     if(lm.getTitulo().equals("")){
       message.setMensagem("O nome do titulo é obrigatório !");
       return  new  ResponseEntity<AnswerModel>(message, HttpStatus.BAD_REQUEST);
@@ -41,9 +41,14 @@ public class LivrariaService {
     } else if(lm.getImg().equals(null)){
       message.setMensagem("A imagem do livro é Obrigatória!");
       return new ResponseEntity<AnswerModel>(message, HttpStatus.BAD_REQUEST);
-    } else{
+    } if(acao.equals("cadastrar")){
       return new ResponseEntity<LivrariaModel>(lr.save(lm),HttpStatus.CREATED);
+      
+    }else{
+      return new ResponseEntity<LivrariaModel>(lr.save(lm),HttpStatus.OK);
+
     }
+    
     
   }
 
