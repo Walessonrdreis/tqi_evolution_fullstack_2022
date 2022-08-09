@@ -4,17 +4,18 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import br.com.api.livraria.model.LivrariaModel;
+import br.com.api.livraria.repository.LivrariaRepository;
 
 @Service
 public class LivrariaService {
 
   @Autowired
-  private LivrariaService ls;
+  private LivrariaRepository lr;
 
   //metodo para listar todos os livros
  
-  public Iterable<LivrariaModel> findAll(){
-    return  ls.findAll();
+  public Iterable<LivrariaModel> listar(){
+    return  lr.findAll();
     
   }
   
