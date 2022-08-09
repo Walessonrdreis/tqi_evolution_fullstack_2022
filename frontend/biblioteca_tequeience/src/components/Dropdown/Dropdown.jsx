@@ -25,7 +25,7 @@ export const Dropdown = ({title, options, onSelect})=> {
       <ul role="menu">
       {options.map((option) => (
         <li key={option} 
-        role="menuiten"
+        role="menuitem"
         onClick={() => handleSelection(option)}>{option}</li>
       ))}
 
