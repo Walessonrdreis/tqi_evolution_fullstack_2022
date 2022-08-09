@@ -2,6 +2,7 @@ package br.com.api.livraria.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -16,6 +17,7 @@ import br.com.api.livraria.services.LivrariaService;
 
 
 @RestController
+@CrossOrigin(origins="*")//resolver problema CORS quando as portas são diferentes e entram em conflito react ...3000 e spring... 
 public class LivrariaController {
 
 
@@ -25,7 +27,6 @@ public class LivrariaController {
 
   @DeleteMapping("/remover/{id}")//Além de adicionar a rota, eu tenho que saber qual o id, é necessário adicionar o id
   //Estou pegando da url uma informação e a tratando como variável
-
   //remover sempre retorna mensagem 
   public ResponseEntity<AnswerModel> remover(@PathVariable long id){ //dentro do parâmetro do método é preciso capturar a informação id via URL
     //Para isso tem a anotação @PathVariable
