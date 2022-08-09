@@ -4,6 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -18,6 +19,12 @@ public class LivrariaController {
 
   @Autowired
   private LivrariaService ls;
+
+  @PutMapping("/alterar")
+  public ResponseEntity<?> alterar(@RequestBody LivrariaModel lm){
+      return ls.cadastrarAlterar(lm, "alterar");
+  }
+
 
   @PostMapping("/cadastrar")
   public ResponseEntity<?> cadastrar(@RequestBody LivrariaModel lm){

@@ -18,39 +18,45 @@ public class LivrariaService {
   @Autowired
   private AnswerModel message;
 
+  // metodo para listar todos os livros
 
+  public Iterable<LivrariaModel> listar() {
+    return lr.findAll();
 
-  //metodo para listar todos os livros
- 
-  public Iterable<LivrariaModel> listar(){
-    return  lr.findAll();
-    
   }
-  
-  //Metodo para cadastrar ou alterar livros
-  public ResponseEntity<?> cadastrarAlterar(LivrariaModel lm, String acao){
-    if(lm.getTitulo().equals("")){
+
+  // Metodo para cadastrar ou alterar livros
+  public ResponseEntity<?> cadastrarAlterar(LivrariaModel lm, String acao) {
+    if (lm.getTitulo().equals("")) {
       message.setMensagem("O nome do titulo é obrigatório !");
-      return  new  ResponseEntity<AnswerModel>(message, HttpStatus.BAD_REQUEST);
-    }else if(lm.getAutor().equals("")){
+      return new ResponseEntity<AnswerModel>(message, HttpStatus.BAD_REQUEST);
+    } else if (lm.getAutor().equals("")) {
       message.setMensagem("O Nome do Autor é obrigatório!");
       return new ResponseEntity<AnswerModel>(message, HttpStatus.BAD_REQUEST);
-    }else if(lm.getEditora().equals("")){
+    } else if (lm.getEditora().equals("")) {
       message.setMensagem("O Nome da Editora é obrigatório!");
       return new ResponseEntity<AnswerModel>(message, HttpStatus.BAD_REQUEST);
-    } else if(lm.getImg().equals(null)){
+    } else if (lm.getImg().equals(null)) {
       message.setMensagem("A imagem do livro é Obrigatória!");
       return new ResponseEntity<AnswerModel>(message, HttpStatus.BAD_REQUEST);
-    } if(acao.equals("cadastrar")){
-      return new ResponseEntity<LivrariaModel>(lr.save(lm),HttpStatus.CREATED);
-      
-    }else{
-      return new ResponseEntity<LivrariaModel>(lr.save(lm),HttpStatus.OK);
+    } else {
+      if (acao.equals("cadastrar")) {
+        return new ResponseEntity<LivrariaModel>(lr.save(lm), HttpStatus.CREATED);//cadastrar
 
+      } else {
+        return new ResponseEntity<LivrariaModel>(lr.save(lm), HttpStatus.OK);//alterar
+
+      }
     }
-    
-    
+
   }
 
+  //Método para formatar produtos
 
+  public ResponseEntity<AnswerModel> remover(long id){
+    lr.deleteById(id);//Deleta através do ID
+
+    message.setMensagem("O livro foi Removido com sucesso");
+    return new ResponseEntity<AnswerModel>(message, HttpStatus.OK);
+  }
 }
