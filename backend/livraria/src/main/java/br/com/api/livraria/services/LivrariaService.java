@@ -12,9 +12,9 @@ public class LivrariaService {
   private LivrariaService ls;
 
   //metodo para listar todos os livros
-
-  public Iterable<LivrariaModel> listar(){
-    return ls.findAll();
+ 
+  public Iterable<LivrariaModel> findAll(){
+    return  ls.findAll();
     
   }
   
