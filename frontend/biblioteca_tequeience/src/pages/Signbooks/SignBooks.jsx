@@ -28,13 +28,25 @@ const SignLivos = () => {
     .then(retorno_convertido => setlivros(retorno_convertido));
   },[])//[] garante que não entre em loop infinito de requisições, sem ele entra
 
+  //Obtendo os dados do formulário
+  const aoDigitar = (e) => { //e = evento
+    //console.log(e.target);// retorna o objeto que está executando o evento
+
+    //pegando o valor do objeto produto,passar a informação a ser alterada 
+    //pelo nome e insere o valor
+    setObjLivro({...objLivro, [e.target.name]:e.target.value});
+
+
+  }
+
+
   //Retorno
   return (
     <div>
     {/*<p>{JSON.stringify(livros)}</p>{/*testando se está consumindo os dados */}
     <p>{JSON.stringify(objLivro)}</p>
     <h1>Cadastro de Livros</h1>
-      <Form button={btnCadastrar}/>
+      <Form button={btnCadastrar} eventoTeclado={aoDigitar}/>
       <Table vetor={livros}/>
       
     </div>

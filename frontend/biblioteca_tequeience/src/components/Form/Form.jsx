@@ -1,14 +1,14 @@
 
 import React from 'react'
 
-const Form = ({button}) => {
+const Form = ({button, eventoTeclado}) => {
   return (
     <form>
-      <input type='text' placeholder='Título' className='form-control' />
-      <input type='text' placeholder='Autor' className='form-control' />
-      <input type='text' placeholder='Editora' className='form-control' />
+      <input type='text' onChange={eventoTeclado} name='titulo' placeholder='Título' className='form-control' />
+      <input type='text' onChange={eventoTeclado} name='autor' placeholder='Autor' className='form-control' />
+      <input type='text' onChange={eventoTeclado} name='editora' placeholder='Editora' className='form-control' />
       <label>Insira a imagem do livro</label>
-      <input type="file" accept="image/*" className='form-control'/>
+      <input type="file" onChange={eventoTeclado} name='img' accept="image/*" className='form-control'/>
       {
         button
         ?
