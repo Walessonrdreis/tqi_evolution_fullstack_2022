@@ -1,6 +1,6 @@
 import React from 'react'
 
-const Table = () => {
+const Table = ({vetor}) => {
   return (
     <table className="table">
       <thead>
@@ -15,12 +15,19 @@ const Table = () => {
         </tr>
       </thead>
       <tbody>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
+        {
+          vetor.map((obj, indice)=>(
+        <tr key={indice}>{/*boa prática do react, toda vez que formos criar uma característica ela sera única, nesse caso pode ser o índice da linha */}
+        <td>{indice+1}</td>
+        <td>{obj.titulo}</td>
+        <td>{obj.autor}</td>
+        <td>{obj.editora}</td>
+        <td>{obj.img}</td>
+        <td><button className='btn btn-success'>Selecionar</button></td>
+
+        </tr>
+          ))
+        }
       </tbody>
 
     </table>

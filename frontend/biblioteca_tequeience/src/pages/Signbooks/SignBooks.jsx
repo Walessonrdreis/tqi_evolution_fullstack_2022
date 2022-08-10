@@ -20,10 +20,10 @@ const [livros, setlivros] = useState([]);
   //Retorno
   return (
     <div>
-    <p>{JSON.stringify(livros)}</p>{/*testando se está consumindo os dados */}
+    {/*<p>{JSON.stringify(livros)}</p>{/*testando se está consumindo os dados */}
     <h1>Cadastro de Livros</h1>
       <Form button={btnCadastrar}/>
-      <Table />
+      <Table vetor={livros}/>
       
     </div>
   )
