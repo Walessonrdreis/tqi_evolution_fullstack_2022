@@ -1,7 +1,7 @@
 
 import React from 'react'
 
-const Form = ({button, eventoTeclado, cadastrar, obj}) => {
+const Form = ({button, eventoTeclado, cadastrar, obj, cancelar}) => {
   return (
     <form>
       <input type='text' value={obj.titulo} onChange={eventoTeclado} name='titulo' placeholder='Título' className='form-control' />
@@ -17,7 +17,7 @@ const Form = ({button, eventoTeclado, cadastrar, obj}) => {
         <>
       <input type="button" value="Alterar" className='btn btn-warning'/>
       <input type="button" value="Deletar" className='btn btn-danger'/>
-      <input type="button" value="Cancelar" className='btn btn-secondary'/>
+      <input type="button" value="Cancelar" onClick={cancelar} className='btn btn-secondary'/>
 
         </>
       }

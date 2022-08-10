@@ -67,6 +67,7 @@ const SignLivos = () => {
   //Limpar formulário
   const limparFormulario =() => {
     setObjLivro(livro);
+    setbtnCadastrar(true)
   }
 
   //selecionar livro
@@ -84,9 +85,9 @@ const SignLivos = () => {
     {/*<p>{JSON.stringify(livros)}</p>{/*testando se está consumindo os dados */}
     {/*<p>{JSON.stringify(objLivro)}</p>*/}
     <h1>Cadastro de Livros</h1>
-      <Form button={btnCadastrar} eventoTeclado={aoDigitar} cadastrar={cadastrar} obj={objLivro}/>
+      <Form button={btnCadastrar} eventoTeclado={aoDigitar} cadastrar={cadastrar} obj={objLivro} cancelar={limparFormulario}/>
       {/*obj=... permite limpar os formulários */}
-      <Table vetor={livros} selecionar={selectedLivro}/>
+      <Table vetor={livros} selecionar={selectedLivro} />
       
     </div>
   )
