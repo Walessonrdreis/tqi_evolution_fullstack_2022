@@ -7,7 +7,7 @@ export const Container = styled.div`
   background: white;
   border: 2px solid #000;
  justify-content: center;
-
+ flex-direction:row;
 `;
 export const i_left = styled.div`
   display: flex;
@@ -15,14 +15,18 @@ export const i_left = styled.div`
   flex: 1;
   flex-direction: column;
   gap: 2rem;
-
 `;
 export const i_right = styled.div`
+  display: flex;
   flex: 1;
   position: relative;
+  gap: 1.2rem;
+  justify-content: flex-start;
+  padding-left:10%;
+  box-sizing: border-box;
+ 
 `;
 export const Header = styled.h1`
-  border: 2px solid #000;
   width:100%;
   text-align:right;
   `;
