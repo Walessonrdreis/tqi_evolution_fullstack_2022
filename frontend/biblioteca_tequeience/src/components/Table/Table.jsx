@@ -1,6 +1,6 @@
 import React from 'react'
 
-const Table = ({vetor}) => {
+const Table = ({vetor, selecionar}) => {
   return (
     <table className="table">
       <thead>
@@ -23,7 +23,9 @@ const Table = ({vetor}) => {
         <td>{obj.autor}</td>
         <td>{obj.editora}</td>
         <td>{obj.img}</td>
-        <td><button className='btn btn-success'>Selecionar</button></td>
+        <td><button onClick={() => {selecionar(indice)}} className='btn btn-success'>Selecionar</button></td> {/*toda função que tenha parâmetro deve ser passada como **arrow function** */}
+        {/* O indice está sendo gerado pelo map */}
+        {/* O map é como se fosse um laço de repetição */}
 
         </tr>
           ))

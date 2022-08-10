@@ -69,6 +69,14 @@ const SignLivos = () => {
     setObjLivro(livro);
   }
 
+  //selecionar livro
+  const selectedLivro = (indice) => {//através do índice que se sabe qual produto será selecionado e exibido no formulário
+    setObjLivro(livros[indice])
+    setbtnCadastrar(false);//ocultar cadastrar para aparecer os outros botões de ação
+
+    
+  }
+
 
   //Retorno
   return (
@@ -78,7 +86,7 @@ const SignLivos = () => {
     <h1>Cadastro de Livros</h1>
       <Form button={btnCadastrar} eventoTeclado={aoDigitar} cadastrar={cadastrar} obj={objLivro}/>
       {/*obj=... permite limpar os formulários */}
-      <Table vetor={livros}/>
+      <Table vetor={livros} selecionar={selectedLivro}/>
       
     </div>
   )
