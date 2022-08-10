@@ -52,8 +52,13 @@ const SignLivos = () => {
     })
     .then(retorno => retorno.json())//retorna um promessa, ele só executa quando o fetch realizar a requisição
     //a promessa tem que ser convertida para um json
-    .then(retorno_convertido => {//retorna só se a promessa for convertida em json
-      console.log(retorno_convertido);
+    .then(retorno_convertido => {//retorna só se a promessa for convertida em json :console.log(retorno_convertido);
+      if(retorno_convertido.mensagem !== undefined){
+        alert(retorno_convertido.mensagem);
+      } else {
+        setlivros([...livros, retorno_convertido])
+        alert('Produto cadastrado com sucesso!');
+      }
     });
           
   }
