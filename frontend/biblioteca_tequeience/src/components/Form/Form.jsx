@@ -1,7 +1,7 @@
 
 import React from 'react'
 
-const Form = ({button, eventoTeclado}) => {
+const Form = ({button, eventoTeclado, cadastrar}) => {
   return (
     <form>
       <input type='text' onChange={eventoTeclado} name='titulo' placeholder='Título' className='form-control' />
@@ -12,7 +12,7 @@ const Form = ({button, eventoTeclado}) => {
       {
         button
         ?
-      <input type="button" value="Cadastrar" className='btn btn-primary'/>
+      <input type="button" value="Cadastrar" onClick={cadastrar} className='btn btn-primary'/>
         :
         <>
       <input type="button" value="Alterar" className='btn btn-warning'/>

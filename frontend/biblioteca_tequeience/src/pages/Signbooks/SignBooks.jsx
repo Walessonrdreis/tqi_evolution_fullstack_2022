@@ -35,8 +35,27 @@ const SignLivos = () => {
     //pegando o valor do objeto produto,passar a informação a ser alterada 
     //pelo nome e insere o valor
     setObjLivro({...objLivro, [e.target.name]:e.target.value});
+  }
 
-
+  //cadastrar produto
+  const cadastrar = () => {
+    fetch('http://localhost:8080/cadastrar', //para fazer a requisição
+    //por padrão o fetch executa requisição do tipo *get*, é necessário configurar para fazer *post*
+    {
+      //características
+      method:'post', //método
+      body:JSON.stringify(objLivro),//o corpo da requisição, os dados que serão utilizados, tem que ser convertido para um texto
+      headers:{
+        'Content-type':'application/json',
+        'Accept':'application/json'
+      }
+    })
+    .then(retorno => retorno.json())//retorna um promessa, ele só executa quando o fetch realizar a requisição
+    //a promessa tem que ser convertida para um json
+    .then(retorno_convertido => {//retorna só se a promessa for convertida em json
+      console.log(retorno_convertido);
+    });
+          
   }
 
 
@@ -44,9 +63,9 @@ const SignLivos = () => {
   return (
     <div>
     {/*<p>{JSON.stringify(livros)}</p>{/*testando se está consumindo os dados */}
-    <p>{JSON.stringify(objLivro)}</p>
+    {/*<p>{JSON.stringify(objLivro)}</p>*/}
     <h1>Cadastro de Livros</h1>
-      <Form button={btnCadastrar} eventoTeclado={aoDigitar}/>
+      <Form button={btnCadastrar} eventoTeclado={aoDigitar} cadastrar={cadastrar}/>
       <Table vetor={livros}/>
       
     </div>
