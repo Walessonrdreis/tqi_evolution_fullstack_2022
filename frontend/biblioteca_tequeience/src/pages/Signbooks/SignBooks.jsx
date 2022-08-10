@@ -58,9 +58,15 @@ const SignLivos = () => {
       } else {
         setlivros([...livros, retorno_convertido])
         alert('Produto cadastrado com sucesso!');
+        limparFormulario();
       }
     });
           
+  }
+
+  //Limpar formulário
+  const limparFormulario =() => {
+    setObjLivro(livro);
   }
 
 
@@ -70,7 +76,8 @@ const SignLivos = () => {
     {/*<p>{JSON.stringify(livros)}</p>{/*testando se está consumindo os dados */}
     {/*<p>{JSON.stringify(objLivro)}</p>*/}
     <h1>Cadastro de Livros</h1>
-      <Form button={btnCadastrar} eventoTeclado={aoDigitar} cadastrar={cadastrar}/>
+      <Form button={btnCadastrar} eventoTeclado={aoDigitar} cadastrar={cadastrar} obj={objLivro}/>
+      {/*obj=... permite limpar os formulários */}
       <Table vetor={livros}/>
       
     </div>
