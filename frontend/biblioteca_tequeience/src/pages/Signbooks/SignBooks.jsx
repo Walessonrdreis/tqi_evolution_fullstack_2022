@@ -16,7 +16,8 @@ const SignLivos = () => {
 
   //useState
   const [btnCadastrar, setbtnCadastrar] = useState(true);
-const [livros, setlivros] = useState([]);
+  const [livros, setlivros] = useState([]);
+  const [objLivro, setObjLivro] = useState(livro);
 
   //useEffect : utilizado quando o componente é montado
   // Quando a tabela e o usuário estiverem sendo exibidos para o usuário 
@@ -31,6 +32,7 @@ const [livros, setlivros] = useState([]);
   return (
     <div>
     {/*<p>{JSON.stringify(livros)}</p>{/*testando se está consumindo os dados */}
+    <p>{JSON.stringify(objLivro)}</p>
     <h1>Cadastro de Livros</h1>
       <Form button={btnCadastrar}/>
       <Table vetor={livros}/>
