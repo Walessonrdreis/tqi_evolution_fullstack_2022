@@ -4,6 +4,16 @@ import Table from '../../components/Table/Table';
 
 
 const SignLivos = () => {
+
+  //Objeto Livros
+  const livro = {
+    id: 0,
+    titulo: '',
+    autor: '',
+    editora: '',
+    img: ''
+  }
+
   //useState
   const [btnCadastrar, setbtnCadastrar] = useState(true);
 const [livros, setlivros] = useState([]);
