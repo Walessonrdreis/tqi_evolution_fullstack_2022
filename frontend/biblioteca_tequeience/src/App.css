@@ -9,8 +9,6 @@ form input {
 
 form input[type='button']{
   margin-right: 5px;
-  width: 4.5rem;
-  transform: scale(.8);
   font-size: .8rem;
 }
 
