@@ -3,8 +3,10 @@ import {
   useNavigate,
   Link,
 } from "react-router-dom";
+import Bookcase from "../../components/Estante/Bookcase";
 import Header from "../../components/Header";
 import Navbar from "../../components/Navbar/Navbar";
+
 
 
 
@@ -20,8 +22,8 @@ const Home = () => {
   }
   return (
       <>
-   
-        <button onClick={logout}>Logout</button>
+   <Bookcase />
+      
       </>
      
    

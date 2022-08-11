@@ -4,8 +4,7 @@ import Table from '../../components/Table/Table';
 import Button from "../../components/Button/Button"
 import Navbar from '../../components/Navbar/Navbar';
 
-
-const SignLivos = () => {
+export const SignLivos = () => {
 
   //Objeto Livros
   const livro = {
@@ -13,7 +12,8 @@ const SignLivos = () => {
     titulo: '',
     autor: '',
     editora: '',
-    img: ''
+    img: '',
+    preco: ''
   }
 
   //useState
@@ -155,7 +155,7 @@ const SignLivos = () => {
   }
 
   //selecionar livro
-  const selectedLivro = (indice) => {//através do índice que se sabe qual produto será selecionado e exibido no formulário
+   const selectedLivro = (indice) => {//através do índice que se sabe qual produto será selecionado e exibido no formulário
     setObjLivro(livros[indice])
     setbtnCadastrar(false);//ocultar cadastrar para aparecer os outros botões de ação
 
@@ -172,12 +172,13 @@ const SignLivos = () => {
     <h1>Cadastro de Livros</h1>
       <Form button={btnCadastrar} eventoTeclado={aoDigitar} cadastrar={cadastrar} obj={objLivro} cancelar={limparFormulario} remover={remover} alterar={alterar}/>
       {/*obj=... permite limpar os formulários */}
+      
       <Table vetor={livros} selecionar={selectedLivro} />
-    <Button title="Home"/>
+ 
 
       
     </div>
   )
 }
 
-export default SignLivos
+export default SignLivos;

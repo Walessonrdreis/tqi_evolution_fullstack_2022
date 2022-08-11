@@ -4,8 +4,8 @@ export const Nav = styled.nav`
   height: 10vh;
   display: flex;
   justify-content: space-between;
-  margin-bottom: 2rem;
   top: 0;
+  border: solid;
 
 
 
@@ -15,6 +15,7 @@ export const Nav = styled.nav`
   justify-content: left;
   display: flex;
   gap: 2rem;
+  border: 2px  solid ;
 
 }
 
@@ -33,6 +34,7 @@ export const Nav = styled.nav`
 .n_list > ul {
   display: flex;
   gap: 2rem;
+  margin-top:1rem;
   margin-right: 4rem;
   list-style-type: none;
  
@@ -47,6 +49,7 @@ export const Nav = styled.nav`
 .n_list ul li:hover ul.sub-list-category  {
   visibility: visible;
   transition: ease-out 1s;
+  z-index:9;
   
 } 
 .n_list ul li ul:hover li {
