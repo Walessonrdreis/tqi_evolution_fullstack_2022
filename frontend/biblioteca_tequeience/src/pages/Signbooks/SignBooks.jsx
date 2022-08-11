@@ -1,6 +1,8 @@
 import React,{useEffect, useState} from 'react';
 import Form from '../../components/Form/Form';
 import Table from '../../components/Table/Table';
+import Button from "../../components/Button/Button"
+import Navbar from '../../components/Navbar/Navbar';
 
 
 const SignLivos = () => {
@@ -58,6 +60,49 @@ const SignLivos = () => {
       } else {
         setlivros([...livros, retorno_convertido])
         alert('Produto cadastrado com sucesso!');
+        limparFormulario();
+      }
+    });
+          
+  }
+  //Alterar produto
+  const alterar = () => {
+    fetch('http://localhost:8080/alterar', //para fazer a requisição
+    //por padrão o fetch executa requisição do tipo *get*, é necessário configurar para fazer *post*
+    {
+      //características
+      method:'put', //método
+      body:JSON.stringify(objLivro),//o corpo da requisição, os dados que serão utilizados, tem que ser convertido para um texto
+      headers:{
+        'Content-type':'application/json',
+        'Accept':'application/json'
+      }
+    })
+    .then(retorno => retorno.json())//retorna um promessa, ele só executa quando o fetch realizar a requisição
+    //a promessa tem que ser convertida para um json
+    .then(retorno_convertido => {//retorna só se a promessa for convertida em json :console.log(retorno_convertido);
+      if(retorno_convertido.mensagem !== undefined){
+        alert(retorno_convertido.mensagem);
+      } else {
+
+        alert('Livro alterado com sucesso!');
+
+        //cópia do vetor de livros
+     let vetorTemp = [...livros]; //temporário porque não é possível mexer no original
+
+     //índice
+      let indice = vetorTemp.findIndex((book) => { //método padrão do JS que percorre o vetor e devolve as posição de alguma verificação
+      return book.id === objLivro.id;  //se na linha do vetor temp o id dele é igual ao id do objLivro, retorna a posição do livro com o id
+      });
+
+      //Remover livro do vetorTemp
+      vetorTemp[indice] = objLivro;
+
+      //atualizar o vetor de livros 
+      setlivros(vetorTemp);
+
+
+        //limpar formulário
         limparFormulario();
       }
     });
@@ -121,12 +166,15 @@ const SignLivos = () => {
   //Retorno
   return (
     <div>
+
     {/*<p>{JSON.stringify(livros)}</p>{/*testando se está consumindo os dados */}
     {/*<p>{JSON.stringify(objLivro)}</p>*/}
     <h1>Cadastro de Livros</h1>
-      <Form button={btnCadastrar} eventoTeclado={aoDigitar} cadastrar={cadastrar} obj={objLivro} cancelar={limparFormulario} remover={remover}/>
+      <Form button={btnCadastrar} eventoTeclado={aoDigitar} cadastrar={cadastrar} obj={objLivro} cancelar={limparFormulario} remover={remover} alterar={alterar}/>
       {/*obj=... permite limpar os formulários */}
       <Table vetor={livros} selecionar={selectedLivro} />
+    <Button title="Home"/>
+
       
     </div>
   )

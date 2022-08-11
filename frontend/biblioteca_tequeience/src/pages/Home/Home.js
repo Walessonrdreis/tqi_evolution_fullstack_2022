@@ -20,8 +20,7 @@ const Home = () => {
   }
   return (
       <>
-        <Header />
-        <Navbar />
+   
         <button onClick={logout}>Logout</button>
       </>
      

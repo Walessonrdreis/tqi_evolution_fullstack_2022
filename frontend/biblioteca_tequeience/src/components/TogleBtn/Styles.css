@@ -1,0 +1,32 @@
+.toggleBtn{
+  display: flex;
+  justify-content: space-between;
+  border: 3px solid var(--orange);
+  border-radius: 1rem;
+  position: relative;
+  cursor: pointer;
+  width: 3.5rem;
+  height: 1.5rem;
+  float: left;
+  cursor: pointer;
+  margin-top: 1rem;
+  margin-left: 5rem;
+}
+#toggleBtn{
+  width: 4.5rem;
+  border: none;
+  background: none;
+ 
+}
+
+.toggleBtn>*{
+  width: 1.2rem;
+  height: 1.2rem;
+  color: var(--orange);
+}
+.t-button{
+  border-radius: 100%;
+  background: var(--orange);
+  position: absolute;
+  transition: ease-out .9s;
+}

@@ -15,4 +15,10 @@ form input[type='button']{
   margin-right: 5px;
   font-size: .8rem;
 }
+.link{
+  color: black;
+  text-decoration: none;
+}
+
+
 

@@ -6,7 +6,6 @@ export const Nav = styled.nav`
   justify-content: space-between;
   margin-bottom: 2rem;
   top: 0;
-  border: 1px solid ;
 
 
 
@@ -16,7 +15,7 @@ export const Nav = styled.nav`
   justify-content: left;
   display: flex;
   gap: 2rem;
-  border: 1px solid;
+
 }
 
 .n_right{
@@ -40,7 +39,7 @@ export const Nav = styled.nav`
 }
 .link{
   text-decoration:none;
-  color: black ;
+
 }
 
 
@@ -52,8 +51,6 @@ export const Nav = styled.nav`
 } 
 .n_list ul li ul:hover li {
 
-color: white;
-background: var(--black);
 visibility: initial;
 
 }
@@ -69,7 +66,7 @@ visibility: initial;
   height: auto;
   padding: 10px 0px 10px 0px;
   border: 2px solid var(--orange);
-  background: white;
+
 }
 .n_list > ul li ul.sub-list-services li,
 .n_list > ul li ul.sub-list-category li{
@@ -79,20 +76,16 @@ visibility: initial;
   cursor: pointer;
   padding: 0 9px;
   width: 11rem;
- 
+
  }
 
 
 .n_list > ul li ul li:hover {
-  color: black ;
   cursor: pointer;
-  background: var(--orange);
+
  
 }
   
-.n_list > ul li ul.sub-list-services li .link,
-.n_list > ul li ul.sub-list-category li .link{
-color: black ;
-}
+
 
 `;

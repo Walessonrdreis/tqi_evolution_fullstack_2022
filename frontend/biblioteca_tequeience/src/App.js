@@ -1,60 +1,58 @@
 
 import './App.css';
 import './styles/Global.css';
-import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
+import React, { useState } from "react";
+import { ThemeProvider } from "styled-components";
+import {darkTheme,lightTheme,GlobalStyles } from "./styles/Global";
+import { BrowserRouter as Router, Routes, Route,} from 'react-router-dom';
 import Login from "./pages/Login/Login";
 import Home from "./pages/Home/Home";
 import Signup from "./pages/Signup/Signup"
 import SignLivros from "./pages/Signbooks/SignBooks"
 import Shop from "./pages/Shop/Shop";
 import Sellbooks from "./pages/SellBooks/SellBooks"
+import ToggleBtn from './components/TogleBtn/ToggleBtn';
+import Navbar from './components/Navbar/Navbar';
 
 
-const PrivateRoute = ({children, redirectTo}) => {
-  const isAuthenticated = localStorage.getItem("token") !== null;
-  console.log("isAuth: ",isAuthenticated);
-  return isAuthenticated ? children : <Navigate to={redirectTo}/>;
-}
+
+
 
 function App() {
   
+  const [theme, setTheme] = useState("light");
+  const switchTheme = () => {
+      theme === "light" ? setTheme("dark") : setTheme("light");
+    };
   return (
-    
+
+    <ThemeProvider theme={theme === "light" ? lightTheme : darkTheme}>
+      <GlobalStyles />
+      <div className="App">
+        <div onClick={switchTheme}>
+        <ToggleBtn />
+        </div>
+      </div>
+
+
     <Router>
-    <Routes>
-        <Route path="/" element={<Login />}/>
-    
-        <Route path="/Home"
-          element={
-            <PrivateRoute redirectTo="/">
-              <Home />
-            </PrivateRoute>
-          }
-        />
-        <Route path="/home/signup" element={
-          <PrivateRoute redirectTo="/">
-            <Signup />
-          </PrivateRoute>
-        }/>
-        <Route path="/home/signbooks" element={
-          <PrivateRoute redirectTo="/">
-            <SignLivros />
-          </PrivateRoute>
-        }/>
-        <Route path="/home/shop" element={
-          <PrivateRoute redirectTo="/">
-            <Shop />
-          </PrivateRoute>
-        }/>
-        <Route path="/home/sellbooks" element={
-          <PrivateRoute redirectTo="/">
-            <Sellbooks />
-          </PrivateRoute>
-        }/>
+    <Navbar />
+      <Routes>
+        <Route path="login" element={<Login />} />
+        <Route path="/" element={<Home />}/>
+        <Route path="/signup" element={<Signup />} />
+        <Route path="/signbooks" element={<SignLivros />} />
+        <Route path="/shop" element={<Shop />} />
+        <Route path="/sellbooks" element={<Sellbooks />} />
       </Routes>
 
-    </Router>
+
     
+
+
+    </Router>
+    </ThemeProvider>
+
 
   );
 }

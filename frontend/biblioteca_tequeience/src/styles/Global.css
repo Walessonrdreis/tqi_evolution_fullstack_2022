@@ -26,10 +26,10 @@ ul{
 }
 li{
   text-decoration: none;
-  color: black;
+
 }
 
 ul >:hover{
-  color: var(--orange);
+
   cursor: pointer;
 }

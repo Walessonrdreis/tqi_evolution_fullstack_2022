@@ -4,8 +4,6 @@ export const Container = styled.div`
   height: 100% ;
   display: flex;
   align-items: center;
-  background: white;
-  border: 2px solid #000;
  justify-content: center;
  flex-direction:row;
 `;

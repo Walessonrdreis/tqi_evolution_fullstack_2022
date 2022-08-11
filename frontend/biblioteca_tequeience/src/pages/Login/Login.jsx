@@ -1,14 +1,16 @@
 import React, {useEffect, useState} from "react";
-import {useNavigate} from "react-router-dom";
+import {useNavigate, Link} from "react-router-dom";
+import Navbar from "../../components/Navbar/Navbar";
 import "./Login.css";
 
 const Login = () => {
   const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
+  
 
   useEffect(() => {
-    if (!loading && localStorage.getItem("token")!== null) {
-      navigate("/home");
+    if (!loading && localStorage.getItem("token")!== null ) {
+      navigate("/");
     }
   },[loading,navigate]);
 
@@ -20,8 +22,10 @@ const Login = () => {
     },2000);
   };
 
+
   return (
     <>
+
     <div className="login-page">
       <h1>Livraria TQIence</h1>
       <div>
@@ -32,7 +36,7 @@ const Login = () => {
       <div className="enter">
         {loading && <div className="loader"></div>}
         <button onClick={login}>Entrar</button>
-        <button>Signup</button>
+        <button><Link className="link" to="/signup">Cadastro</Link></button>
       </div>
       </div>
     </div>
