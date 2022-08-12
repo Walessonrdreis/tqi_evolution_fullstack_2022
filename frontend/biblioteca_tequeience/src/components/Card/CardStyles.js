@@ -1,29 +1,30 @@
 import styled from "styled-components";
 
 export const card = styled.div`
-width: 100%;
-height: 15rem ;
+
+
 background: none;
 margin:0;
+border: solid;
+width:100%;
+height:20rem;
+margin-bottom: 10px;
+
+
+
+
+
 
 h6{
   font-size: 12px;
 }
-
-.card{
-  text-decoration: none;
-  border:none ;
-  background: none;
-
-
-  
-}
-img{
+.card-img-book{
   width: 100%;
+
 }
 .card-img-book {
   width: 100%;
-  background-color: yellow;
+  border:solid;
   height: 10rem ;
 
 }

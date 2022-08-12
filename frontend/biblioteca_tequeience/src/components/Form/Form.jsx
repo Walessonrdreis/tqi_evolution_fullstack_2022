@@ -7,10 +7,10 @@ const Form = ({button, eventoTeclado, cadastrar, obj, cancelar, remover, alterar
       <input type='text' value={obj.titulo} onChange={eventoTeclado} name='titulo' placeholder='Título' className='form-control' />
       <input type='text' value={obj.autor} onChange={eventoTeclado} name='autor' placeholder='Autor' className='form-control' />
       <input type='text' value={obj.editora} onChange={eventoTeclado} name='editora' placeholder='Editora' className='form-control' />
-
-      <label>Insira a imagem do livro</label>
-      <input type="file" value={obj.img} onChange={eventoTeclado} name='img' accept="image/*" className='form-control'/>
-      <input type='number' min={0} value={obj.preco} onChange={eventoTeclado} name='Preço' placeholder='Editora' className='form-control' />
+      <input type='text' value={obj.preco} onChange={eventoTeclado} name='preco' placeholder='Preço' className='form-control' />
+    
+     <label>Imagem</label>
+      <input type="file" value={obj.img} onChange={eventoTeclado} name='img' className='form-control'/>
       {
         button
         ?
