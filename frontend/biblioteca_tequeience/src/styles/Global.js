@@ -7,7 +7,7 @@ export const darkTheme = {
   headingColor2: "#fff"
 }
 export const lightTheme = {
-  body: "#433d31",
+  body: "#22272e",
   textColor: "blue",
   headingColor: "white",
   headingColor2: "#27030d"

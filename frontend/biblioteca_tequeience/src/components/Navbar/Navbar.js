@@ -4,7 +4,7 @@ import React from 'react';
 import Toggle from "../Toggle/Toggle";
 import * as C from "./NavbarStyles";
 
-import { Link } from 'react-router-dom';import HomeIcon from "@iconscout/react-unicons/icons/uil-home";
+import { Link } from 'react-router-dom';import Hamburger from "@iconscout/react-unicons/icons/uil-bars";
 
 
 const Navbar = () => {
@@ -16,8 +16,7 @@ const Navbar = () => {
     <C.Nav >
 
       <div className="n_left">
-      <HomeIcon />
-      
+        <Hamburger className="icon-hamburger" />
       </div>
       <div className="n_right">
         <div className="n_list">

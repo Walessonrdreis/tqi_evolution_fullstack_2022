@@ -9,6 +9,7 @@ export const Nav = styled.nav`
 
 
 
+
   .n_left{
   flex: 1;
   align-items: center;
@@ -17,6 +18,12 @@ export const Nav = styled.nav`
   gap: 2rem;
 
 
+}
+
+.icon-hamburger{
+  margin-left:2rem;
+  width:2rem;
+  height:2rem;
 }
 
 .n_right{
