@@ -16,7 +16,10 @@ const Navbar = () => {
     <C.Nav >
 
       <div className="n_left">
+      <Link className="link" to="/">
         <Hamburger className="icon-hamburger" />
+      </Link>
+
       </div>
       <div className="n_right">
         <div className="n_list">
@@ -27,7 +30,7 @@ const Navbar = () => {
             </li>
             <li>
               <Link className="link" to="/">
-      Services</Link>
+      User</Link>
 
                   <ul className="sub-list-services"
                   
@@ -84,11 +87,11 @@ const Navbar = () => {
             </li>
             <li>
               <Link className="link" to="/">
-      Bookmarks</Link>
+      Favoritos</Link>
             </li>
             <li>
               <Link  className="link" to="/">
-      Contact</Link>
+      Carrinho</Link>
             </li>
           </ul>
 

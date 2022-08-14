@@ -1,5 +1,6 @@
 import React from "react";
 import * as C from "./styles";
+import { Link } from "react-router-dom";
 
 
 const Header = ()=>{
@@ -7,18 +8,10 @@ const Header = ()=>{
   return(
   
     <C.Container>
-      <C.i_left>
-        <C.Header>
-          <C.Title>Biblioteca TQIence</C.Title>
-        </C.Header>
-      </C.i_left>
-
-      <C.i_right>
-    
-
-      
-    
-      </C.i_right>
+     
+      <Link to="/livrocart" className="cart-box">
+        Cart:<span className="cart-count">0</span>
+      </Link>
     </C.Container>
 
     
