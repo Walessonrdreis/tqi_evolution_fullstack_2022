@@ -16,7 +16,7 @@ import { Link } from "react-scroll";
 
 
 
-const Home = () => {
+const Home = (props) => {
  //Objeto Livros
  const livro = {
   id: 0,
@@ -174,6 +174,9 @@ const limparFormulario =() => {
 }
 const [selectedItem, setselectedItem] = useState(null)
   return (
+
+      <>
+       
       <C.container className="container">
       
       <div className="row">
@@ -200,6 +203,8 @@ const [selectedItem, setselectedItem] = useState(null)
 
       </C.container>
     
+
+      </>
      
      
    

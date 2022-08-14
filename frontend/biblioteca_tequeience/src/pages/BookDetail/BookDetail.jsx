@@ -1,60 +1,58 @@
 import React, {useEffect, useState} from 'react'
-import { BrowserRouter as Router, useParams, Link} from "react-router-dom"
+import { useParams } from 'react-router-dom';
+import TableBookDetail from './TableBookDetail/TableBookDetail';
+
 
 const BookDetail = (props) => {
-  let {id} = useParams();
-  const [livroDetail, setLivroDetail] = useState([]);
+  //Objeto Livros
+  const livro = {
+    id: 0,
+    titulo: '',
+    autor: '',
+    editora: '',
+    img: '',
+    preco: ''
+  }
+  let { id } = useParams();
+  //useState
+  const [btnCadastrar, setbtnCadastrar] = useState(true);
+  const [livros, setlivros] = useState([]);
+  const [objLivro, setObjLivro] = useState(livro);
 
-  useEffect(() => {
-    fetch("http://localhost:8080/listar" + id + ".json")
-      .then(async(res)=>{
-        const retorno = await res.json();
-        setLivroDetail(retorno);
-      })
-      .catch(function (err){
-        console.log("Fatching failed", err);
-      });
+  //useEffect : utilizado quando o componente é montado
+  // Quando a tabela e o usuário estiverem sendo exibidos para o usuário 
+  //Fará a requisição com o backend, obter os livros e em seguida enviar para o useEffect livros
+  useEffect(()=>{
+    fetch("http://localhost:8080/listar")
+    .then(async (res) => {
+      const result = await res.json();
+      setlivros(result);
+    })
+    .catch(function (err) {
+      console.log("fatching failed", err);
+    })  
+  },[])//[] garante que não entre em loop infinito de requisições, sem ele entra
 
-    }, []);
-    const ld = livroDetail;
+ 
+  //Limpar formulário
+  const limparFormulario =() => {
+    setObjLivro(livro);
+    setbtnCadastrar(true)
+  }
+
+  //selecionar livro
+   const selectedLivro = (indice) => {//através do índice que se sabe qual produto será selecionado e exibido no formulário
+    setObjLivro(livros[indice])
+    setbtnCadastrar(false);//ocultar cadastrar para aparecer os outros botões de ação
+
+    
+  }
        
   return (
-
-    <div className="container">
-    <div className="product-detail" style={{ textAlign: "left" }}>
-      <Link to="/" className="btn btn-primary">
-        Back
-      </Link>
-      <table className="table">
-        <tbody>
-          <tr>
-            <td>Image:</td>
-            <td>
-              <img src={ld.img} alt="" />
-            </td>
-          </tr>
-          <tr>
-            <td>Titulo</td>
-            <td>{ld.titulo}</td>
-          </tr>
-          <tr>
-            <td>Autor:</td>
-            <td>{ld.autor}</td>
-          </tr>
-          <tr>
-            <td colSpan="2">
-              <button
-                className="btn btn-dark"
-                onClick={() => props.addtocart(ld)}
-              >
-                Add to Cart
-              </button>
-            </td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-  </div>
+    <>
+    <TableBookDetail vetor={livros} selecionar={selectedLivro}/>
+    </>
+    
   )
 }
 

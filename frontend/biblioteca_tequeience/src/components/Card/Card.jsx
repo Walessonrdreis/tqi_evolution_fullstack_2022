@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
-import { NavLink } from 'react-router-dom'
+import { NavLink ,Link} from 'react-router-dom'
 import * as C from "./CardStyles";
-import { Link } from "react-scroll";
+import { link } from "react-scroll";
 
 
 
@@ -19,10 +19,11 @@ const Card = ({vetor, selecionar}) => {
             
          <div className="cards-body" >
        
+      <Link to={`/bookDetail/${obj.id}`}>
         <div className="card-img-book">
-      
         <img src={obj.img} alt={obj.titulo} height="100%"  width="100%" />
         </div> 
+      </Link>
         <div className="card-footer">
         {obj ===[]}
         <h6>Código:{obj.id}</h6>
