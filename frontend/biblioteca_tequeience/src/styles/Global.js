@@ -7,13 +7,13 @@ export const darkTheme = {
   headingColor2: "#fff"
 }
 export const lightTheme = {
-  body: "#cacaca",
-  textColor: "#000",
-  headingColor: "#242d49",
+  body: "#433d31",
+  textColor: "blue",
+  headingColor: "white",
   headingColor2: "#27030d"
 }
 export const GlobalStyles = createGlobalStyle`
- body {
+ body,div {
   background: ${props => props.theme.body};
   color: ${props => props.theme.textColor};
   transition: .3s ease;
@@ -23,4 +23,9 @@ export const GlobalStyles = createGlobalStyle`
  }
  .link{color: ${props => props.theme.headingColor};}
  .link:hover{color: ${props => props.theme.headingColor2};}
+
+ button{
+  background: ${props => props.theme. headingColor};
+  color: ${props => props.theme.body};
+ }
 `

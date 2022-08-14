@@ -5,7 +5,7 @@ export const Nav = styled.nav`
   display: flex;
   justify-content: space-between;
   top: 0;
-  border: solid;
+
 
 
 
@@ -15,7 +15,7 @@ export const Nav = styled.nav`
   justify-content: left;
   display: flex;
   gap: 2rem;
-  border: 2px  solid ;
+
 
 }
 

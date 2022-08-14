@@ -26,7 +26,7 @@ function App() {
     };
   return (
 
-    <ThemeProvider theme={theme === "light" ? lightTheme : darkTheme}>
+    <ThemeProvider className="pp" theme={theme === "light" ? lightTheme : darkTheme}>
       <GlobalStyles />
       <div className="App">
         <div onClick={switchTheme}>

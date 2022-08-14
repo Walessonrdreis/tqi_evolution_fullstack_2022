@@ -2,13 +2,16 @@ import React,{useEffect, useState} from 'react';
 import * as  C from "./styles"
 
 import {
-  useNavigate,
-  Link,
+  NavLink
 } from "react-router-dom";
 import Card from '../../components/Card/Card';
 import Bookcase from "../../components/Estante/Bookcase";
 import Header from "../../components/Header";
 import Navbar from "../../components/Navbar/Navbar";
+import Form from '../../components/Form/Form';
+import BuyBook from '../../components/Buybook/BuyBook';
+import Dropdown from '../../components/Dropdown/Dropdown';
+import { Link } from "react-scroll";
 
 
 
@@ -169,13 +172,24 @@ const limparFormulario =() => {
 
   
 }
+const [selectedItem, setselectedItem] = useState(null)
   return (
       <C.container className="container">
       
       <div className="row">
+
       <div className="col api_cards">
 
-      <Card vetor={livros} selected={selectedLivro} />
+
+     
+      <Card vetor={livros}
+       selecionar={selectedLivro} />
+     
+
+      </div>
+    
+      <div className="buyBook">
+      <BuyBook className="button" button={btnCadastrar} eventoTeclado={aoDigitar}  obj={objLivro}  remover={remover}  />
 
       </div>
      

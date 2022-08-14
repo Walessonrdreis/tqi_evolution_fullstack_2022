@@ -1,12 +1,18 @@
 import styled from "styled-components";
 
+export const container = styled.div`
+  display:flex;
+  border-bottom: 1px solid;
+
+`
+
 export const card = styled.div`
 
 
 background: none;
 margin:0;
 width:300px;
-height:500px;
+height:800px;
 margin-bottom: 10px;
 
 

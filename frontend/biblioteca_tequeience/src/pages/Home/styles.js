@@ -6,7 +6,7 @@ export const container = styled.div`
   justify-content:center;
   flex-direction:column;
   width: 100%;
-  border: solid ;
+ 
 
   top: 0;
 
@@ -18,4 +18,10 @@ export const container = styled.div`
     
 
   }
+  .buyBook{
+    display: flex;
+    justify-content:center;
+    
+  }
+  
 `
