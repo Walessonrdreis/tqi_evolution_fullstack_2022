@@ -24,6 +24,8 @@ public class LivrariaModel {
   private String titulo;
   private String autor;
   private String editora;
-  private byte[] img;
+  private String img;
+  private String nameImagem;
+  private Double preco;
   
 }

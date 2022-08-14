@@ -20,7 +20,7 @@ const Home = () => {
   titulo: '',
   autor: '',
   editora: '',
-  img: "file",
+  img: '',
   preco: '0.0'
 }
 

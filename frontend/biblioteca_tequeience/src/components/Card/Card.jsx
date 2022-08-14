@@ -18,13 +18,20 @@ const Card = ({vetor, selecionar}) => {
       <C.card className="cards" key={indice}>
             
          <div className="cards-body" >
-        <div className="card-img-book">imgBook{obj.img}</div>
+       
+        <div className="card-img-book">
+        <NavLink to="shop">
+
+        <img src={obj.img} alt={obj.titulo} height="100%"  width="100%" />
+        </NavLink>
+        </div> 
         <button onClick={() => {selecionar(indice)}} className="btn-cart">Adicionar Carrinho</button>
-        {obj ==[]}
+        
+        {obj ===[]}
         <h6>Código:{obj.id}</h6>
         <h6>Titulo:{obj.titulo}</h6>
-        <h6>{obj.autor}</h6>
-        <h6>Preço: R$: {obj.preco},00</h6>
+        <h6>Autor: {obj.autor}</h6>
+        <h6>Preço: R$: {obj.preco}</h6>
       
          </div> 
   

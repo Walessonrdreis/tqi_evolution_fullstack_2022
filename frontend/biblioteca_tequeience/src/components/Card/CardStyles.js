@@ -6,8 +6,8 @@ export const card = styled.div`
 background: none;
 margin:0;
 border: solid;
-width:100%;
-height:20rem;
+width:300px;
+height:500px;
 margin-bottom: 10px;
 
 
@@ -25,7 +25,7 @@ h6{
 .card-img-book {
   width: 100%;
   border:solid;
-  height: 10rem ;
+  height: 18rem ;
 
 }
 .btn-cart{

@@ -4,7 +4,7 @@ export const container = styled.div`
 
   display: flex;
   justify-content:center;
-flex-direction:row column;
+  flex-direction:column;
   width: 100%;
   border: solid ;
 
@@ -12,6 +12,9 @@ flex-direction:row column;
 
   .api_cards{
     display: flex;
+    gap: 2rem;
+   flex-wrap:wrap;
+   justify-content:center;
     
 
   }

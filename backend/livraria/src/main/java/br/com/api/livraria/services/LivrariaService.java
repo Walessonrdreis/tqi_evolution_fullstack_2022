@@ -39,6 +39,9 @@ public class LivrariaService {
     } else if (lm.getImg().equals(null)) {
       message.setMensagem("A imagem do livro é Obrigatória!");
       return new ResponseEntity<AnswerModel>(message, HttpStatus.BAD_REQUEST);
+    } else if (lm.getPreco().equals(0)) {
+      message.setMensagem("O preço do livro é Obrigatória!");
+      return new ResponseEntity<AnswerModel>(message, HttpStatus.BAD_REQUEST);
     } else {
       if (acao.equals("cadastrar")) {
         return new ResponseEntity<LivrariaModel>(lr.save(lm), HttpStatus.CREATED);//cadastrar
