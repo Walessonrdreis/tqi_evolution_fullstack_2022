@@ -7,10 +7,10 @@ import * as C from "./BookcaseStyles";
 
 
 
-const Bookcase = () => {
+const Bookcase = (props) => {
   const [btnCadastrar, setbtnCadastrar] = useState(true);
-  const [livros, setlivros] = useState([]);
   const [objLivro, setObjLivro] = useState(livro);
+  const [livros, setlivros] = useState([]);
 
   useEffect(()=>{
     fetch("http://localhost:8080/listar")
@@ -35,6 +35,9 @@ const Bookcase = () => {
   }
 
   return (
+    <>
+
+
     <C.container >
      
       <C.d_left>
@@ -48,6 +51,8 @@ const Bookcase = () => {
 
     
     </C.container>
+    </>
+
   )
 }
 
