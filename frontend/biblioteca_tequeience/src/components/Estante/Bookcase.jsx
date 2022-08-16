@@ -1,8 +1,8 @@
 import React,{useEffect, useState} from 'react';
 import { NavLink } from 'react-router-dom';
+import BookDetail from '../../pages/BookDetail/BookDetail';
 import Card from '../Card/Card';
 import * as C from "./BookcaseStyles";
-
 
 
 
@@ -19,7 +19,7 @@ const Bookcase = (props) => {
   },[])
 
   const livro = {
-    id: 0,
+    id: 1,
     titulo: '',
     autor: '',
     editora: '',
@@ -48,7 +48,7 @@ const Bookcase = (props) => {
       <C.d_right>
       <Card vetor={livros} selecionar={selectedLivro} />
       </C.d_right>
-
+  
     
     </C.container>
     </>

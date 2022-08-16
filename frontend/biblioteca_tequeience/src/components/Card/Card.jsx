@@ -26,13 +26,13 @@ const Card = ({vetor, selecionar}) => {
       </Link>
         <div className="card-footer">
         {obj ===[]}
-        <h6>Código:{obj.id}</h6>
         <h6>Titulo:{obj.titulo}</h6>
         <h6>Autor: {obj.autor}</h6>
         <h6>Preço: R$: {obj.preco}</h6>
-        <Link to="BuyBook">
-        <button onClick={() => {selecionar(indice)}} className="btn-cart">Adicionar Carrinho</button>
-
+        <Link to={``} >
+        <button onClick={() => {selecionar(indice)}} className="btn-cart">Comprar</button>
+           <button>Adicionar ao carrinho</button>
+              <button>Adicionar aos favoritos</button>
         </Link>
         </div>
       

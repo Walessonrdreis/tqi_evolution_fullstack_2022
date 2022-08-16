@@ -1,5 +1,8 @@
 package br.com.api.livraria.services;
 
+import java.util.Optional;
+
+import org.hibernate.ObjectNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -21,9 +24,23 @@ public class LivrariaService {
   // metodo para listar todos os livros
 
   public Iterable<LivrariaModel> listar() {
-    return lr.findAll();
+    return lr.findAll();}
+
+  
+  public Optional<LivrariaModel> bookDetail(long id) {
+    return lr.findById(id);
 
   }
+
+  @Autowired
+  private LivrariaRepository repository;
+
+  // public LivrariaModel findById(long id) {
+  //   Optional<LivrariaModel> obj = repository.findById(id);
+  //   return obj.orElseThrow(() ->   new ObjectNotFoundException(
+  //     "Objeto não encontrado! id: "+ id + ", Tipo: " + LivrariaModel.class.getName(),"livraria"));
+
+  // }
 
   // Metodo para cadastrar ou alterar livros
   public ResponseEntity<?> cadastrarAlterar(LivrariaModel lm, String acao) {
