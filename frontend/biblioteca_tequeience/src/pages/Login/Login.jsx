@@ -27,7 +27,7 @@ const Login = () => {
     <>
 
     <div className="login-page">
-      <h1>Livraria TQIence</h1>
+      <h3>Login</h3>
       <div>
       <label>Usuário</label>
       <input />
@@ -35,7 +35,7 @@ const Login = () => {
       <input type="password" />
       <div className="enter">
         {loading && <div className="loader"></div>}
-        <button onClick={login}>Entrar</button>
+        <button onClick={login}><Link className="link" to="/home">Entrar</Link></button>
         <button><Link className="link" to="/signup">Cadastro</Link></button>
       </div>
       </div>

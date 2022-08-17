@@ -1,7 +1,11 @@
 import axios from 'axios';
 import React, {useEffect, useState} from 'react'
 import { Link, useParams } from 'react-router-dom';
+import { api } from '../../services/Api';
 import TableBookDetail from './TableBookDetail/TableBookDetail';
+
+
+
 
 
 export default function BookDetail() {
@@ -17,7 +21,7 @@ const [books, setBooks] = useState(book);
 // Quando a tabela e o usuário estiverem sendo exibidos para o usuário 
 //Fará a requisição com o backend, obter os livros e em seguida enviar para o useEffect livros
 useEffect(()=>{
-  fetch(`http://localhost:8080/bookDetail/${books.id}/`)
+  fetch(api)
   .then(retorno => retorno.json())
   .then(retorno_convertido =>{setlivros(retorno_convertido);console.log(retorno_convertido)})
 
@@ -26,11 +30,21 @@ useEffect(()=>{
 const selectedLivro = (indice) => {
   setBooks(livros[indice])
 }
+const GetID = props => {
+ const id = livros.id
+  
   return (
-    <>
+    <div>GetID{id}</div>
+  )
+}
+
+return (
+  <>
+    <GetID />
      <TableBookDetail vetor={livros} selecionar={selectedLivro}/>
      
     </>
     
-  )
-}
+    )
+   
+  }
