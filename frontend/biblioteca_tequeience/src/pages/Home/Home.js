@@ -164,6 +164,10 @@ const limparFormulario =() => {
   setObjLivro(livro);
   setbtnCadastrar(true)
 }
+const enviarToLink=({id})=> {
+  setObjLivro(livros[id])
+ let url = `http://localhost:8080/bookDetail/${id}`;
+}
 
 //selecionar livro
  const selectedLivro = (indice) => {//através do índice que se sabe qual produto será selecionado e exibido no formulário

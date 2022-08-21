@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import { NavLink ,Link} from 'react-router-dom'
 import * as C from "./CardStyles";
 import { link } from "react-scroll";
+import { path } from '../../services/Api';
 
 
 
@@ -26,13 +27,13 @@ const Card = ({vetor, selecionar}) => {
       </Link>
         <div className="card-footer">
         {obj ===[]}
-        <h6>Código:{obj.id}</h6>
         <h6>Titulo:{obj.titulo}</h6>
         <h6>Autor: {obj.autor}</h6>
         <h6>Preço: R$: {obj.preco}</h6>
-        <Link to="BuyBook">
-        <button onClick={() => {selecionar(indice)}} className="btn-cart">Adicionar Carrinho</button>
-
+        <Link to={``} >
+        <button onClick={() => {selecionar(indice)}} className="btn-buy">Comprar</button>
+           <button className="btn-cart">Adicionar ao carrinho</button>
+              <button className="btn-favoritos">Adicionar aos favoritos</button>
         </Link>
         </div>
       

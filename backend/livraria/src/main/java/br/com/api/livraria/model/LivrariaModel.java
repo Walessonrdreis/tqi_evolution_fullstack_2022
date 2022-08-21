@@ -21,15 +21,13 @@ public class LivrariaModel {
 
   @Id
   @GeneratedValue( strategy = GenerationType.IDENTITY)
-  private Long id;
+  private long id;
   private String titulo;
   private String autor;
   private String editora;
   private String img;
   private String nameImagem;
   private Double preco;
-  
-  @ManyToOne
-  private Bookmarks favoritos;
+
   
 }

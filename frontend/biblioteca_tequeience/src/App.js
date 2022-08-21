@@ -36,6 +36,8 @@ function App() {
     CartLivro = [...CartLivro, obj];
     setCart(CartLivro);
   };
+
+  
   return (
 
 
@@ -49,11 +51,11 @@ function App() {
 
 
     <Router>
-    <Header />
+  
     <Navbar />
       <Routes>
-        <Route path="login" element={<Login />} />
-        <Route path="/" element={<Home />}/>
+        <Route path="/" element={<Login />} />
+        <Route path="/home" element={<Home />}/>
         <Route path="/bookDetail/:id" element={<BookDetail addCart={addToCart}/>}/>
         <Route path="/livrocart" element={<Cart cartList={cart}/>}/>
               
@@ -64,6 +66,7 @@ function App() {
         <Route path="/sellbooks" element={<Sellbooks />} />
       </Routes>
     </Router>
+  
     </ThemeProvider>
 
 

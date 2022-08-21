@@ -8,13 +8,15 @@ import {
 } from "react-router-dom";
 
 
-const TableBookDetail = ({vetor, selecionar}) => {
+const TableBookDetail = ({vetor}) => {
+    
+    const obj = vetor;
 
   return (
     <>
 
-    {
-      vetor.flatMap((obj, indice)=>(
+ 
+      
         
 
     <div className="container">
@@ -22,7 +24,7 @@ const TableBookDetail = ({vetor, selecionar}) => {
       <Link to="/" className="btn btn-primary">
         Back
       </Link>
-      <table className="table" key={`cart-index-${indice}`}>
+      <table className="table" key={obj.id}>
         <tbody>
           <tr>
             <td>Image:</td>
@@ -42,7 +44,7 @@ const TableBookDetail = ({vetor, selecionar}) => {
             <td colSpan="2">
               <button
                 className="btn btn-dark"
-                onClick={() => {selecionar(indice)}}
+             
               >
                 Add to Cart
               </button>
@@ -52,9 +54,9 @@ const TableBookDetail = ({vetor, selecionar}) => {
       </table>
     </div>
   </div>
-      ))
+     
 
-    }
+  
   
 
    

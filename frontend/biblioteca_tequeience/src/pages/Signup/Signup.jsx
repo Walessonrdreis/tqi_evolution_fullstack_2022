@@ -10,12 +10,16 @@ const Signup = () => {
     <>
   
     <div className="login-page">
-    <h1>Livraria TQIence</h1>
+    <h3>Cadastre-se</h3>
     <div>
-    <label>Usuário</label>
-    <input />
+    <label>Nome</label>
+    <input type="text" placeholder="Nome" />
+    <label>Sobrenome</label>
+    <input type="text" placeholder="Sobrenome" />
+    <label>Email</label>
+    <input type='email' placeholder="Email" />
     <label>Senha</label>
-    <input type="password" />
+    <input type="password" placeholder="***********" />
     <div className="enter">
       <button>Signup</button>
     </div>
