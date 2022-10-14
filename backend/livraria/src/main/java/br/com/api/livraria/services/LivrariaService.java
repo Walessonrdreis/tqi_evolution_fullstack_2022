@@ -16,7 +16,7 @@ import br.com.api.livraria.repository.LivrariaRepository;
 public class LivrariaService {
 
   @Autowired
-  private LivrariaRepository lr;
+  private LivrariaRepository livrariaRepository;
 
   @Autowired
   private AnswerModel message;
@@ -24,47 +24,40 @@ public class LivrariaService {
   // metodo para listar todos os livros
 
   public Iterable<LivrariaModel> listar() {
-    return lr.findAll();}
+    return livrariaRepository.findAll();}
 
   
   public Optional<LivrariaModel> bookDetail(long id) {
-    return lr.findById(id);
+    return livrariaRepository.findById(id);
 
   }
 
   @Autowired
-  private LivrariaRepository repository;
-
-  // public LivrariaModel findById(long id) {
-  //   Optional<LivrariaModel> obj = repository.findById(id);
-  //   return obj.orElseThrow(() ->   new ObjectNotFoundException(
-  //     "Objeto não encontrado! id: "+ id + ", Tipo: " + LivrariaModel.class.getName(),"livraria"));
-
-  // }
+  private LivrariaRepository lRepository;
 
   // Metodo para cadastrar ou alterar livros
-  public ResponseEntity<?> cadastrarAlterar(LivrariaModel lm, String acao) {
-    if (lm.getTitulo().equals("")) {
+  public ResponseEntity<?> cadastrarAlterar(LivrariaModel livrariaModel, String acao) {
+    if (livrariaModel.getTitulo().equals("")) {
       message.setMensagem("O nome do titulo é obrigatório !");
       return new ResponseEntity<AnswerModel>(message, HttpStatus.BAD_REQUEST);
-    } else if (lm.getAutor().equals("")) {
+    } else if (livrariaModel.getAutor().equals("")) {
       message.setMensagem("O Nome do Autor é obrigatório!");
       return new ResponseEntity<AnswerModel>(message, HttpStatus.BAD_REQUEST);
-    } else if (lm.getEditora().equals("")) {
+    } else if (livrariaModel.getEditora().equals("")) {
       message.setMensagem("O Nome da Editora é obrigatório!");
       return new ResponseEntity<AnswerModel>(message, HttpStatus.BAD_REQUEST);
-    } else if (lm.getImg().equals(null)) {
+    } else if (livrariaModel.getImg().equals(null)) {
       message.setMensagem("A imagem do livro é Obrigatória!");
       return new ResponseEntity<AnswerModel>(message, HttpStatus.BAD_REQUEST);
-    } else if (lm.getPreco().equals(0)) {
+    } else if (livrariaModel.getPreco().equals(0)) {
       message.setMensagem("O preço do livro é Obrigatória!");
       return new ResponseEntity<AnswerModel>(message, HttpStatus.BAD_REQUEST);
     } else {
       if (acao.equals("cadastrar")) {
-        return new ResponseEntity<LivrariaModel>(lr.save(lm), HttpStatus.CREATED);//cadastrar
+        return new ResponseEntity<LivrariaModel>(livrariaRepository.save(livrariaModel), HttpStatus.CREATED);//cadastrar
 
       } else {
-        return new ResponseEntity<LivrariaModel>(lr.save(lm), HttpStatus.OK);//alterar
+        return new ResponseEntity<LivrariaModel>(livrariaRepository.save(livrariaModel), HttpStatus.OK);//alterar
 
       }
     }
@@ -74,7 +67,7 @@ public class LivrariaService {
   //Método para formatar produtos
 
   public ResponseEntity<AnswerModel> remover(long id){
-    lr.deleteById(id);//Deleta através do ID
+    livrariaRepository.deleteById(id);//Deleta através do ID
 
     message.setMensagem("O livro foi Removido com sucesso");
     return new ResponseEntity<AnswerModel>(message, HttpStatus.OK);
